@@ -1,8 +1,10 @@
 import { UserModel } from "../postgres/postgres.js"
 
 
+//========================================
+
 export const getAllVisitor=async(req,res)=>{
-    try {
+    try{
         const users=await UserModel.findAll();
         if(users.length==0){
             return res.status(200).json({"error":"users not found"})
